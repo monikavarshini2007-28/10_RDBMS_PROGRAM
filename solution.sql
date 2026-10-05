@@ -1,3 +1,5 @@
+create database COURSE;
+use COURSE;
 CREATE TABLE Course (
 CourseID INT,
 CourseName VARCHAR(30),
