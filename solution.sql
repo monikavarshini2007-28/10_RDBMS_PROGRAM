@@ -1,1 +1,33 @@
+CREATE TABLE Course (
+CourseID INT,
+CourseName VARCHAR(30),
+Credits INT
+);
 
+INSERT INTO Course VALUES (201, 'Database Systems', 4);
+INSERT INTO Course VALUES (202, 'Data Structures', 3);
+INSERT INTO Course VALUES (203, 'Mathematics', 4);
+
+CREATE TABLE Enrollment (
+EnrollmentID INT,
+StudentID INT,
+CourseID INT
+);
+
+INSERT INTO Enrollment VALUES (1, 1001, 201);
+INSERT INTO Enrollment VALUES (2, 1001, 202);
+INSERT INTO Enrollment VALUES (3, 1002, 203);
+INSERT INTO Enrollment VALUES (4, 1003, 201);
+
+-LEFT JOIN
+SELECT Course.CourseID, Course.CourseName,
+Enrollment.EnrollmentID, Enrollment.StudentID
+FROM Course
+LEFT JOIN Enrollment
+ON Course.CourseID = Enrollment.CourseID;
+-RIGHT JOIN
+SELECT Course.CourseID, Course.CourseName,
+Enrollment.EnrollmentID, Enrollment.StudentID
+FROM Course
+RIGHT JOIN Enrollment
+ON Course.CourseID = Enrollment.CourseID;
